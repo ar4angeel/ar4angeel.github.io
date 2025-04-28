@@ -1,0 +1,173 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #633B14;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    background: #875A25;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s all ease-in-out;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1 {
+    color: wheat;
+}
+
+h2, h3 {
+    color: #633B14;
+    margin-bottom: 1rem;
+}
+
+.contacts p {
+    margin: 0.5rem 0;
+}
+
+.timeline .item {
+    margin: 1rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid #875A25;
+}
+
+ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+li {
+    margin: 0.5rem 0;
+    position: relative;
+}
+
+li::before {
+    content: "•";
+    color: #875A25;
+    margin-right: 0.5rem;
+}
+
+.nested-list ul {
+    padding-left: 2rem;
+    margin: 0.5rem 0;
+}
+
+.nested-list li li::before {
+    content: "◦";
+    color: #633B14;
+}
+
+.experience h3 {
+    color: #875A25;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.1em;
+}
+
+.card {
+    transition-delay: 0.2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+.slide-in {
+    animation: slideIn 0.6s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header {
+        padding: 1rem;
+    }
+}
+
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 70px !important; /* пространство для логотипа */
+}
+
+.logo {
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 200px;
+    width: 200px;
+    filter: blur(0.25px);
+}
+
+.header-content {
+    flex: 1;
+    position: relative;
+    left: 10px; /* смещение контента */
+}
+
+@media (max-width: 600px) {
+    header {
+        padding-left: 60px !important;
+        gap: 10px;
+    }
+    
+    .logo {
+        height: 60px;
+        width: 60px;
+        left: -5px;
+    }
+    
+    .header-content {
+        left: 5px;
+    }
+}

@@ -1,0 +1,9 @@
+@charset "utf-8";
+target_blue_sky {
+    -webkit-transition: color 20s ease-in;
+    -o-transition: color 20s ease-in;
+    transition: color 20s ease-in;
+}
+target_blue_sky:active {
+    color: #1994E6;
+}
