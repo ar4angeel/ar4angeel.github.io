@@ -1,3 +1,4 @@
+/* Общие настройки */
 * {
     margin: 0;
     padding: 0;
@@ -6,167 +7,155 @@
 }
 
 body {
-    background: #633B14;
-    line-height: 1.6;
-    color: #333;
+    background: #633B14; /* Основной фон */
+    line-height: 1.6; /* Интервал между строками */
+    color: #333; /* Основной цвет текста */
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 800px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрирование контейнера */
+    padding: 20px; /* Отступы внутри контейнера */
 }
 
-header {
-    text-align: center;
-    padding: 2rem;
-    background: #875A25;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    color: white;
-}
-
-.card {
-    background: white;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.6s all ease-in-out;
-}
-
-.card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-h1 {
-    color: wheat;
-}
-
-h2, h3 {
-    color: #633B14;
-    margin-bottom: 1rem;
-}
-
-.contacts p {
-    margin: 0.5rem 0;
-}
-
-.timeline .item {
-    margin: 1rem 0;
-    padding-left: 1rem;
-    border-left: 3px solid #875A25;
-}
-
-ul {
-    list-style: none;
-    padding-left: 1rem;
-}
-
-li {
-    margin: 0.5rem 0;
-    position: relative;
-}
-
-li::before {
-    content: "•";
-    color: #875A25;
-    margin-right: 0.5rem;
-}
-
-.nested-list ul {
-    padding-left: 2rem;
-    margin: 0.5rem 0;
-}
-
-.nested-list li li::before {
-    content: "◦";
-    color: #633B14;
-}
-
-.experience h3 {
-    color: #875A25;
-    margin: 1.5rem 0 1rem;
-    font-size: 1.1em;
-}
-
-.card {
-    transition-delay: 0.2s;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-in;
-}
-
-.slide-in {
-    animation: slideIn 0.6s ease-out forwards;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-    
-    header {
-        padding: 1rem;
-    }
-}
-
+/* Заголовок (Header) */
 header {
     position: relative;
     display: flex;
     align-items: center;
     gap: 20px;
-    padding-left: 70px !important; /* пространство для логотипа */
+    text-align: center;
+    padding: 2rem;
+    padding-left: 70px; /* Пространство для логотипа */
+    background: #875A25; /* Фон заголовка */
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    color: white;
 }
 
-.logo {
+header .logo {
     position: absolute;
     left: -10px;
     top: 50%;
     transform: translateY(-50%);
     height: 200px;
     width: 200px;
-    filter: blur(0.25px);
+    filter: blur(0.25px); /* Эффект размытия */
 }
 
 .header-content {
     flex: 1;
     position: relative;
-    left: 10px; /* смещение контента */
+    left: 10px; /* Смещение контента */
 }
 
+/* Карточки (Cards) */
+.card {
+    background: white; /* Фон карточек */
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для объема */
+    opacity: 0; /* Начальное состояние для анимации */
+    transform: translateY(20px);
+    transition: all 0.6s ease-in-out; /* Плавный переход */
+    transition-delay: 0.2s; /* Задержка анимации */
+}
+
+.card.visible {
+    opacity: 1; /* Конечное состояние для анимации */
+    transform: translateY(0);
+}
+
+/* Заголовки */
+h1 {
+    color: wheat; /* Цвет главного заголовка */
+}
+
+h2,
+h3 {
+    color: #633B14; /* Цвет второстепенных заголовков */
+    margin-bottom: 1rem;
+}
+
+/* Контакты */
+.contacts p {
+    margin: 0.5rem 0; /* Отступы между контактами */
+}
+
+/* Списки */
+ul {
+    list-style: none; /* Убираем стандартные маркеры */
+    padding-left: 1rem; /* Отступ слева */
+}
+
+li {
+    margin: 0.5rem 0; /* Отступы между элементами списка */
+    position: relative;
+}
+
+li::before {
+    content: "•"; /* Маркер для основных пунктов */
+    color: #875A25;
+    margin-right: 0.5rem;
+}
+
+.nested-list ul {
+    padding-left: 2rem; /* Отступ для вложенных списков */
+    margin: 0.5rem 0;
+}
+
+.nested-list li li::before {
+    content: "◦"; /* Маркер для вложенных пунктов */
+    color: #633B14;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Начальная прозрачность */
+    }
+    to {
+        opacity: 1; /* Конечная прозрачность */
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in; /* Плавное появление */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px); /* Начальное положение */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* Конечное положение */
+    }
+}
+
+.slide-in {
+    animation: slideIn 0.6s ease-out forwards; /* Плавное появление слева */
+}
+
+/* Адаптивность */
 @media (max-width: 600px) {
+    .container {
+        padding: 10px; /* Уменьшаем отступы на маленьких экранах */
+    }
+
     header {
-        padding-left: 60px !important;
+        padding-left: 60px; /* Уменьшаем пространство для логотипа */
         gap: 10px;
     }
-    
+
     .logo {
         height: 60px;
         width: 60px;
         left: -5px;
     }
-    
+
     .header-content {
         left: 5px;
     }
