@@ -1,11 +1,58 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-<meta charset="utf-8">
-<title>Документ без названия</title>
-<link href="blue_sky.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="color.css">
 </head>
-
 <body>
+    <!-- Header -->
+    <header>
+        <div class="logo">Мой сайт</div>
+        <nav>
+            <a href="/">Главная</a>
+            <a href="/blog">Блог</a>
+            <a href="/resume">Резюме</a>
+            <div class="dropdown">
+                <a href="#">Еще</a>
+                <div class="dropdown-content">
+                    <a href="/about">О сайте</a>
+                    <a href="/contacts">Контакты</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <section class="left-section">
+            <h1>Основная информация</h1>
+            <p>Здесь может быть любая информация.</p>
+        </section>
+        <section class="right-section">
+            <h2>Техническая информация</h2>
+            <p>Здесь будет зависящая от страницы информация.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="contact-form">
+            <h3>Свяжитесь со мной</h3>
+            <input type="text" placeholder="Ваше имя">
+            <input type="email" placeholder="Ваш email">
+            <textarea placeholder="Сообщение"></textarea>
+            <button>Отправить</button>
+        </div>
+        <div class="pages-list">
+            <a href="/">Главная</a>
+            <a href="/blog">Блог</a>
+            <a href="/resume">Резюме</a>
+            <a href="/about">О сайте</a>
+            <a href="/contacts">Контакты</a>
+        </div>
+    </footer>
 </body>
 </html>

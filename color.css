@@ -1,0 +1,10 @@
+/* Header */
+header {
+    background-color: #6e6e6e;
+    color:azure;
+}
+
+header:hover {
+    background-color: #bcfd4c;
+    color: black;
+}
